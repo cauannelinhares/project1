@@ -1,0 +1,40 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+    
+  </style>
+
+
+<body>
+  <h1>Share Your Opportunity here!</h1>
+  <form action="/postadd" method="post">
+      <label >Position: </label><input type="text" required name="position"><br><br>
+      <label>Description: </label><br><textarea style="width= 70% height= 90%" name="description"></textarea><br><br>
+        <br>
+        <br>
+      <label>Location: </label><select required name="location">
+                    <option value="New York">New York</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Tenessee">Tenessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Boston">Boston</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Santa Barbara">Santa Barbara</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="New Jersey">New Jersey</option>
+                </select>
+      <br><br>
+      <label>Deadline: </label><input type="date" name="deadline" required>
+      <br><br>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+      
+  </form>
+
+</body>
+</html>

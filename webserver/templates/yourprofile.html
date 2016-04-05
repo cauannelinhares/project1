@@ -1,0 +1,31 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>Your Profile</h1>
+  <div>
+    {% for n in data %}
+        <p>Name: {{n[0]}}</p>
+        <p>Email: {{n[1]}}</p>
+        <p>Address: {{n[2]}}</p>
+        <p>Gender: {{n[3]}}</p>
+        <p>{{n[4]}}</p>
+        <p>{{n[5]}}</p>
+        <p>University Name: {{n[6]}}</p>
+        
+    {% endfor %}
+  </div>  
+
+<br><br>
+<a href="/updateprofile" class="button"><button>Update</button></a>
+<a href="/welcome" class="button"><button>Go to Welcome</button></a>
+</body>
+
+
+</html>

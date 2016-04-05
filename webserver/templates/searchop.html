@@ -1,0 +1,57 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+    #taid{
+      border: 1px solid black;
+      margin: 5px;        
+    }
+  </style>
+
+
+<body>
+  <h1>List of Opportunities</h1>
+
+  {% set n = data|length  %}
+  
+  <a href="/welcome" class="button"><button>Go to Welcome</button></a>
+  
+  <div>
+    {% for i in range(0,n) %}
+	{% set ooppid = data[i][1]  %}
+        <div id="taid">
+        <form method="POST" action="/addcomment">
+            <p>Position: {{data[i][0]}}</p>
+	    <p>Opportunity ID: <label name="coppid">{{data[i][1]}}</label> </p>
+            <p>Paid: {{data[i][2]}}</p>
+            <p>Deadline: {{data[i][3]}}</p>
+            <p>Description: {{data[i][4]}}</p>
+            <p>Location: {{data[i][5]}}</p>
+            <p>Please Contact: {{data[i][7]}}</p>
+	    <br>
+            <div>
+            <h3>Comments:</h3>
+            {% for x in comm[i] %}
+                <div id="taid"><p>{{x[0]}}</p><p>{{x[1]}}</p></div>
+
+            {% endfor %}
+            </div>
+
+            <br>
+            <label>Leave Your Comment:</label><br>
+            <textarea name="commenttext"></textarea><br>
+	    <label>Please input the Opportunity ID</label><br>
+	    <input type="text" name="coppid"><br>
+            <input type="submit" value="Add Comment">
+        </form><br><br>
+        </div>
+     
+      <br><br>
+    {% endfor %}
+    </div>
+</body>
+
+
+</html>
